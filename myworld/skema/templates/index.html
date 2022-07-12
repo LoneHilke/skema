@@ -1,0 +1,32 @@
+<h1>SKEMA</h1>
+
+<table border="1">
+    <td> UPDATE </td>
+    <td> ID </td>
+    <td> NAVN </td>
+    
+    <td> GRUPPE </td>
+    <td> MANDAG </td>
+    <td> TIRSDAG </td>
+    <td> ONSDAG </td>
+    <td> TORSDAG </td>
+    <td> FREDAG </td>
+    <td> PLIGTER </td>
+    {% for x in myskema %}
+    <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.navn }}</td>
+        <td>{{ x.gruppe }}</td>
+        <td>{{ x.mandag }}</td>
+        <td>{{ x.tirsdag }}</td>
+        <td>{{ x.onsdag }}</td>
+        <td>{{ x.torsdag }}</td>
+        <td>{{ x.fredag }}</td>
+        <td>{{ x.pligter }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p>
+    <a href="add/">Add navn</a>
+</p>
