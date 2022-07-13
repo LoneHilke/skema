@@ -1,0 +1,30 @@
+<h1>Update skema</h1>
+
+<form action="updaterecord/{{ myskema.id }}" method="post">
+{% csrf_token %}
+navn:<br>
+<input name="navn" value="{{ myskema.navn }}">
+<br><br>
+gruppe:<br>
+<input name="gruppe" value="{{ myskema.gruppe }}">
+<br><br>
+mandag:<br>
+<input name="mandag" value="{{ myskema.mandag }}">
+<br><br>
+tirsdag:<br>
+<input name="tirsdag" value="{{ myskema.tirsdag }}">
+<br><br>
+onsdag:<br>
+<input name="onsdag" value="{{ myskema.onsdag }}">
+<br><br>
+torsdag:<br>
+<input name="torsdag" value="{{ myskema.torsdag }}">
+<br><br>
+fredag:<br>
+<input name="fredag" value="{{ myskema.fredag }}">
+<br><br>
+pligter:<br>
+<input name="pligter" value="{{ myskema.pligter }}">
+<br><br>
+<input type="submit" value="Submit">
+</form>

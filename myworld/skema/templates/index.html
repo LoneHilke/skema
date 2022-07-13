@@ -1,10 +1,9 @@
-<h1>SKEMA</h1>
+<h1>skema</h1>
 
 <table border="1">
-    <td> UPDATE </td>
+   <td> UPDATE </td>
     <td> ID </td>
     <td> NAVN </td>
-    
     <td> GRUPPE </td>
     <td> MANDAG </td>
     <td> TIRSDAG </td>
@@ -14,6 +13,7 @@
     <td> PLIGTER </td>
     {% for x in myskema %}
     <tr>
+        <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
         <td>{{ x.id }}</td>
         <td>{{ x.navn }}</td>
         <td>{{ x.gruppe }}</td>
@@ -23,6 +23,7 @@
         <td>{{ x.torsdag }}</td>
         <td>{{ x.fredag }}</td>
         <td>{{ x.pligter }}</td>
+        <td><a href="delete/{{ x.id }}">delete</a></td>
     </tr>
     {% endfor %}
 </table>
