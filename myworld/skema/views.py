@@ -27,7 +27,7 @@ def addrecord(request):
   torsdag = request.POST['torsdag']
   fredag = request.POST['fredag']
   pligter = request.POST['pligter']
-  skema = skema(navn=navn, gruppe=gruppe, mandag=mandag, tirsdag=tirsdag, onsdag=onsdag, torsdag=torsdag,fredag=fredag, pligter=pligter)
+  skema = Skema(navn=navn, gruppe=gruppe, mandag=mandag, tirsdag=tirsdag, onsdag=onsdag, torsdag=torsdag,fredag=fredag, pligter=pligter)
   skema.save()
   return HttpResponseRedirect(reverse('index'))
 
@@ -43,8 +43,26 @@ def update(request, id):
     'myskema': myskema,
   }
   return HttpResponse(template.render(context, request))
-  
-  #template = loader.get_template('my_first.html')
-  #return HttpResponse(template.render())
 
+def updaterecord(request, id):
+  navn = request.POST['navn']
+  gruppe = request.POST['gruppe']
+  mandag = request.POST['mandag']
+  tirsdag = request.POST['tirsdag']
+  onsdag = request.POST['onsdag']
+  torsdag = request.POST['torsdag']
+  fredag = request.POST['fredag']
+  pligter = request.POST['pligter']
+  skema = Skema.objects.get(id=id)
+  skema.navn = navn
+  skema.gruppe = gruppe
+  skema.mandag = mandag
+  skema.tirsdag = tirsdag
+  skema.onsdag = onsdag
+  skema.torsdag = torsdag
+  skema.fredag = fredag
+  skema.pligter = pligter
+  skema.save()
+  return HttpResponseRedirect(reverse('index'))
+  
 
