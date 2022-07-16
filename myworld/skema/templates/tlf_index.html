@@ -1,0 +1,73 @@
+<html>
+    <div class="container mt-4">
+        <div class="row">
+          <div class="col-sm-1">
+            <tr>
+              <td>UPDATE</td>
+            </div>
+            <div class="col-sm-1">
+              <td>ID</td>
+            </div>
+            <div class="col-sm-2">
+              <td>NAVN</td>
+            </div>
+            <div class="col-sm-2">
+              <td>TLF</td>
+            </div>
+            <div class="col-sm-2">
+              <td>ADRESSE</td>
+            </div>
+            <div class="col-sm-2">
+              <td>ARBEJDE</td>
+            </tr>
+          </div>
+        </div>
+      </div>
+    {% for x in mytlf %}
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-sm-1">
+            <tr>
+              <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+            </tr>
+          </div>
+          <div class="col-sm-1">
+            <tr>
+              <td>{{ x.id }}</td>
+            </tr>
+          </div>
+          <div class="col-sm-2">
+            <tr>
+              <td>{{ x.navn }}</td>
+            </tr>
+          </div>
+          <div class="col-sm-2">
+            <tr>
+              <td>{{ x.tlf }}</td>
+            </tr>
+          </div>
+          <div class="col-sm-2">
+            <tr>
+              <td>{{ x.adresse }}</td>
+            </tr>
+          </div>
+          <div class="col-sm-2">
+            <tr>
+              <td>{{ x.arbejde }}</td>
+            </tr>
+          </div>
+          <div class="col-sm-2">
+            <td><a href="delete/{{ x.id }}">delete</a></td> 
+          </div>
+        </div>
+      </div>
+        
+    {% endfor %}
+    </table>
+    
+    <p>
+      <p></p>
+      <a href="tlf_add/">Add navn</a>
+    </p>
+    
+</html>

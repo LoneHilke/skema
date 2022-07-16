@@ -8,4 +8,10 @@ urlpatterns = [
   path('delete/<int:id>', views.delete, name='delete'),
   path('update/<int:id>', views.update, name='update'),
   path('update/updaterecord/<int:id>', views.updaterecord, name='updaterecord'),
+  path('', views.tlf_index, name= "tlf_index"),
+  path('add/', views.tlf_add, name= "tlf_add"),
+  path('add/addrecord/', views.tlf_addrecord, name= "tlf_addrecord"),
+  path('delete/<int:id>', views.tlf_delete, name='tlf_delete'),
+  path('update/<int:id>', views.tlf_update, name='tlf_update'),
+  path('update/updaterecord/<int:id>', views.tlf_updaterecord, name='tlf_updaterecord'),
 ]

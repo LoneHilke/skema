@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from .models import Skema
+from .models import Skema, Tlf
 
 
 # Create your views here.
@@ -65,4 +65,52 @@ def updaterecord(request, id):
   skema.save()
   return HttpResponseRedirect(reverse('index'))
   
+def tlf_index(request):
+  mytlf = Tlf.objects.all().values()
+  template = loader.get_template('tlf_index.html')
+  context = {
+    'mytlf': mytlf
+  }
+  return HttpResponse(template.render(context, request))
+  
+def tlf_add(request):
+  template = loader.get_template('tlf_add.html')
+  return HttpResponse(template.render({},request))
 
+def tlf_addrecord(request):
+  navn = request.POST['navn']
+  tlf = request.POST['tlf']
+  adresse = request.POST['adresse']
+  arbejde = request.POST['arbejde']
+  tlf = Tlf(navn=navn, tlf=tlf, adresse=adresse, arbejde=arbejde)
+  tlf.save()
+  return HttpResponseRedirect(reverse('tlf_index'))
+
+def tlf_delete(request, id):
+  tlf =Tlf.objects.get(id=id)
+  tlf.delete()
+  return HttpResponseRedirect(reverse('tlf_index'))
+
+def tlf_update(request, id):
+  mytlf = Tlf.objects.get(id=id)
+  template = loader.get_template('tlf_update.html')
+  context = {
+    'mytlf': mytlf,
+  }
+  return HttpResponse(template.render(context, request))
+
+def tlf_updaterecord(request, id):
+  navn = request.POST['navn']
+  tlf = request.POST['tlf']
+  adresse = request.POST['adresse']
+  arbejde = request.POST['arbejde']
+  
+  tlf = Tlf.objects.get(id=id)
+  tlf.navn = navn
+  tlf.tlf = tlf
+  tlf.adresse = adresse
+  tlf.arbejde = arbejde
+  
+  tlf.save()
+  return HttpResponseRedirect(reverse('tlf_index'))
+  

@@ -10,3 +10,10 @@ class Skema(models.Model):
   torsdag = models.TextField(blank =True)
   fredag = models.TextField(blank=True)
   pligter = models.TextField(blank=True)
+
+class Tlf(models.Model):
+  navn = models.TextField()
+  tlf = models.TextField(blank=True) 
+  adresse = models.TextField(blank=True)
+  arbejde = models.TextField (blank=True)
+

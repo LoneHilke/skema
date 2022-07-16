@@ -1,0 +1,18 @@
+<h1>Add navn</h1>
+<form action="addrecord/" method="post">
+    {% csrf_token %}
+    navn:<br>
+    <input name="navn">
+    <br><br>
+    tlf:<br>
+    <input name="tlf">
+    <br><br>
+    adresse:<br>
+    <input name="adresse">
+    <br><br>
+    arbejde:<br>
+    <input name="arbejde">
+    <br><br>
+    
+    <input type="submit" value="Submit">
+</form>

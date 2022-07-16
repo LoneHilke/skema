@@ -1,0 +1,19 @@
+<h1>Update skema</h1>
+
+<form action="updaterecord/{{ mytlf.id }}" method="post">
+    {% csrf_token %}
+    navn:<br>
+    <input name="navn" value="{{ mytlf.navn }}">
+    <br><br>
+    tlf:<br>
+    <input name="tlf" value="{{ mytlf.tlf }}">
+    <br><br>
+    adresse:<br>
+    <input name="adresse" value="{{ mytlf.adresse }}">
+    <br><br>
+    arbejde:<br>
+    <input name="arbejde" value="{{ mytlf.arbejde}}">
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
