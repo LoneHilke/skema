@@ -1,4 +1,5 @@
-<html>
+{% extends 'index.html' %}
+<html lang="en">
     <div class="container mt-4">
         <div class="row">
           <div class="col-sm-1">
@@ -28,7 +29,7 @@
         <div class="row">
           <div class="col-sm-1">
             <tr>
-              <td><a href="update/{{ x.id }}">{{ x.id }}</a></td>
+              <td><a href="tlf_update/{{ x.id }}">{{ x.id }}</a></td>
             </tr>
           </div>
           <div class="col-sm-1">
@@ -57,7 +58,7 @@
             </tr>
           </div>
           <div class="col-sm-2">
-            <td><a href="delete/{{ x.id }}">delete</a></td> 
+            <td><a href="tlf_delete/{{ x.id }}">slet</a></td> 
           </div>
         </div>
       </div>
@@ -67,7 +68,7 @@
     
     <p>
       <p></p>
-      <a href="tlf_add/">Add navn</a>
+      <a href="tlf_add/">Tilføj person</a>
     </p>
     
 </html>

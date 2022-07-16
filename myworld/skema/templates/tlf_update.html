@@ -1,6 +1,6 @@
 <h1>Update skema</h1>
 
-<form action="updaterecord/{{ mytlf.id }}" method="post">
+<form action="tlf_updaterecord/{{ mytlf.id }}" method="post">
     {% csrf_token %}
     navn:<br>
     <input name="navn" value="{{ mytlf.navn }}">
